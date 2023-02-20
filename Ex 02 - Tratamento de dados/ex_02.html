@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratando dados 2.0</title>
+
+    <style>
+        body{
+            background-color: rgb(19, 133, 29);
+            color: white;
+            font: normal 25px arial; 
+        }
+
+        h1{
+            color: rgb(221, 221, 23);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Título aleátorio</h1>
+    <p>Parágrafo aleatório</p>
+
+    <!--
+        - number + number -> ADIÇÃO
+        - string + string -> CONCATENAÇÃO
+
+        var n1 = window.prompt('Digite um numero') ######## STRING
+        var n2 = window.prompt('Digite outro numero') ##### STRING
+        var n3 = n1 + n2 ################################## (STRING + STRING) = CONCATENAÇÃO
+    -->
+
+    <script> // JAVASCRIPT
+        var n1 = parseInt(window.prompt('Digite um numero inteiro: '))  // CONVERTE O VALOR PARA INTEIRO
+
+        var n2 = parseFloat(window.prompt('Digite outro numero real: '))  // CONVERTE O VALOR PARA FLOAT
+
+        var n3 = Number(window.prompt('Digite qualquer numero: '))  // CONVERTE O VALOR PARA NUMERO
+
+        var soma = n1 + n2 + n3    // (number + number + number = ADIÇÃO)
+
+        window.alert(`A soma de ${n1} + ${n2} + ${n3} = ${soma}`).toUpperCase   // ${n} -> TAMPLATE STRING
+    </script>
+
+    <!-- FORMATANDO NUMEROS 
+    - n.toFixed(x) -> O 'x' DETERMINA QUANTAS CASAS VÃO APARECER APÓS A VÍRGULA 
+    - n.replace('x', 'y') -> TOCA O VALO 'x' PELO VALOR 'y'
+    - s.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) -> LOCALIZA UMA STRING DO BRASIL E PEGA O SIMBOLO DA MOEDA DO REAL, DOLAR, EURO, ENTRE OUTROS (R$, U$, ...)
+    -->
+</body>
+</html>

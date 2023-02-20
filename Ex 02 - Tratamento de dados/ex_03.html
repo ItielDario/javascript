@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratando dados 3.0</title>
+
+    <style>
+        body{
+            background-color: rgb(255, 181, 255);
+            color: rgb(32, 32, 32);
+            font: normal 25px arial; 
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- FORMATANDO STRINGS 
+    - s.length -> QUANTOS CARACTERES TEM A STRING
+    - s.toUpperCase() -> TRANSFORMA A STRING EM MAIÚSCULO
+    - s.toLowerCase() -> TRANSFORMA A STRING EM MINÚSCULO
+    -->
+
+    <script> // JAVASCRIPT
+        var nome = window.prompt('Digite seu nome: ')
+        document.write(`Olá <strong>${nome}</strong>, seu nome tem ${nome.length} letras`)  // ESCREVE NO DOCUMENTO
+        document.write(`<br>Seu nome em maiúsculo fica: ${nome.toUpperCase()}`)
+        document.write(`<br>Seu nome em minúsculo fica: ${nome.toLowerCase()}`)
+    </script>
+</body>
+</html>
