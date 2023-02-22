@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição simples e composta</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <label for="txt_vel">Velocidade do carro</label>
+    <input type="number" name="txt_vel" id="txt_vel"/>
+    <input type="button" value="Verificar" onclick="calcular()"/>
+
+    <div id="res">   
+    </div>
+    <br><hr>
+
+    <h1>Sistema de nacionalidade</h1>
+    <label for="txt_pais">Sua nacionalidade</label>
+    <input type="text" name="txt_pais" id="txt_pais">
+    <input type="button" value="Enviar" onclick="verificar()">
+
+    <div id="res1">
+
+    </div>
+
+    <script>
+        // SISTEMA DE MULTAS
+        function calcular(){
+            var txt_vel = window.document.getElementById('txt_vel')
+            var vel = Number(txt_vel.value)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p>`
+
+            if( vel > 60){
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade!</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+
+        // NACIONALIDADE
+        function verificar(){
+            var txt_pais = window.document.getElementById('txt_pais')
+           
+            if(txt_pais.value.toLowerCase() == 'brasil'){  // PEGA O VALOR DIGITADO (.value) E TRANSFORMA EM MINÚSCULO (toLowerCase()) 
+                var res = window.document.getElementById('res1')
+                res.innerHTML = `Você é do Brasil`
+            }
+            else{
+                var res = window.document.getElementById('res1')
+                res.innerHTML = `Você é estrangeiro`
+            }
+        }
+    </script>
+</body>
+</html>
