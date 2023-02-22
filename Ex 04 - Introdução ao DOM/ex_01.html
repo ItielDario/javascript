@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    
+    <style>
+        body{
+            background-color: #721f1f;
+            color: rgb(241, 223, 223);
+            font: normal 20px Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos de DOM</h1>
+    <p>Aqui vai o resultado</p>  <!-- PRIMEIRA TAG P -> [0] -->
+    <p>Aprendendo a usar <strong><em>DOM</em></strong> em JavaScript</p> <!-- SEGUNDA TAG P [1] -->
+    <div id="msg">
+        <h1>Clique em mim</h1>
+    </div>
+
+    <div class="container">
+        <p>Texto aleatório</p>
+    </div>
+    <br>
+    <hr>
+
+    <!-- O DOM (DOCUMENT OBJECT MODEL) SERVE PARA ACESSAR OS ELEMENTOS DENTRO DA PAGINA -->
+
+    <!-- FORMAS DE SELECIONAR UM ELEMENTO 
+    - POR MARCA (TAGs) -> getElementsByTagName()
+    - POR ID ->  getElementById() 
+    - POR NOME ->  getElementsByName()
+    - POR CLASSE ->  getElementsByClassName()
+    - POR SELETOR ->  querySelector() / querySelectorAll()
+    -->
+
+    <script>
+        // POR MARCA
+
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]  //SELECIONE A PRIMEIRA TAG P (getElementsByTagName('p')[0]) DO MEU DOCUMENTO (window.document) E GUARDE DENTRO DE 'p1'
+        window.document.write('Esta escrito assim: ' + p1.innerText)  //ESCRAVA NA TELA (window.document.write()) APENAS  O TEXTO QUE ESTA DENTRO DE 'p1' (p1.innerText) 
+
+        corpo.style.background = 'black'
+        p1.style.color = 'yellow' // MUDA A COR DO 'p1'
+        
+        var p2 = window.document.getElementsByTagName('p')[1]
+        window.document.write('<br>' + p2.innerHTML) //ESCRAVA NA TELA APENAS O TEXTO COM A FORMATAÇÃO QUE ESTA DENTRO DE 'p2' (p2.innerHTML)
+        
+        
+        // POR ID
+        var box = window.document.getElementById('msg')
+        window.document.getElementById('msg').innerText = 'Estou aguardando...' // MUDA O TEXTO DENTRO DE 'msg'
+        //box.innerText = 'Estou aguardando...' // MUDA O TEXTO DENTRO DE 'box'
+        box.style.background = 'purple'
+
+
+        // POR SELEÇÃO (MESMA FORMA QUE CSS)
+        var c = window.document.querySelector('div.container')
+        c.innerHTML = '<h2>Outro texto aleatório<h2>'
+        c.style.color = 'red'
+    </script>
+</body>
+</html>

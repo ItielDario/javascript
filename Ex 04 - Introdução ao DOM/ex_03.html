@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Numeros</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .main{    
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculadora{    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid rgb(141, 141, 141);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.158);
+        }
+
+        h1{
+            margin-bottom: 5px;
+        }
+
+        #resultado{
+            border: 1px solid rgb(145, 145, 145);
+            color: rgb(78, 78, 78);
+            width: 150px;
+            margin-top:20px;
+            text-align: center;
+            border-radius: 3px;
+        }
+        
+        .soma{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- EVENTOS: TUDO QUE PODE ACONTECER COM UM ELEMENTO. -->
+
+    <div class="main">
+        <div class="calculadora">
+            <h1>Somando valores</h1>
+            <div class="calculo">
+                <input type="number" name="txtn1" id="txtn1"> +
+                <input type="number" name="txtn2" id="txtn2">
+            </div>
+            <input class="soma"    type="button" value="Somar" onclick="somar()">
+            <div id="resultado">Resultado</div>
+        </div>
+    </div>
+
+    <script>
+        function somar(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+            window.document.getElementById('resultado').innerHTML = `<strong>A soma deu: ${soma}</strong>`
+        }    
+    </script>
+</body>
+</html>

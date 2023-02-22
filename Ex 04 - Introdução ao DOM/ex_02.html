@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    
+    <style>
+        div{
+            font: normal 20px Arial;
+            background-color: rgb(0, 161, 0);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px; /*ALINHA HORIZONTALMENTE*/ 
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- EVENTOS: TUDO QUE PODE ACONTECER COM UM ELEMENTO. ALGUNS EXEMPLOS DE EVENTOS COM O MOUSE: 
+
+    - mouseenter ->  QUANDO MOVER O MOUSE PARA DENTRO NA DIV
+    - mousemove ->  QUANDO O MOUSE SE MOVE DENTRO DA DIV
+    - mousedown ->  QUANDO PRECIONAR O MOUSE NA DIV
+    - mouseup -> QUANDO SOLTAR O MOUSE PRECIONADO NA DIV
+    - click ->  QUANDO CLICAR NA DIV COM O MOUSE
+    - mouseout ->  QUANDO MOVER O MOUSE PARA FORA DA DIV
+    -->
+
+    <div id="area"> 
+        Interaja...
+    </div>
+
+    <script>
+        var area = window.document.getElementById('area')
+
+        area.addEventListener('click', clicar)  // ADICIONA UM EVENTO PARA A DIV 'area'
+        area.addEventListener('mouseenter', entrar)  // ADICIONA UM EVENTO PARA A DIV 'area'
+        area.addEventListener('mouseout', sair)  // ADICIONA UM EVENTO PARA A DIV 'area'
+
+        function clicar(){  // CRIAÇÃO DA FUNÇÃO 'clicar' (SÓ VAI EXECULTAR QUANDO CLICAR)
+            area.innerText = 'Clicou!'
+            area.style.background = 'blue'
+        }
+
+        function entrar(){ // CRIAÇÃO DA FUNÇÃO 'entrar' (SÓ VAI EXECULTAR QUANDO MOVER O MOUSE PARA DENTRO DA DIV)
+            area.innerText = 'Entrou!'
+            area.style.background = 'purple'
+        }
+
+        function sair(){ // CRIAÇÃO DA FUNÇÃO 'sair' (SÓ VAI EXECULTAR QUANDO MOVER O MOUSE PARA FORA DA DIV)
+            area.innerText = 'Saiu!'
+            area.style.background = 'green'
+        }
+    </script>
+</body>
+</html>
