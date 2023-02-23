@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+
+    <section class="principal">
+        <div>
+            <label for="txt_hora">Horário</label>
+            <input type="number" name="txt_hora" id="txt_hora">
+            <input type="button" value="Eviar" onclick="mudar()">
+        </div>
+
+        <div id="img"></div>
+    </section>
+
+    <footer>
+        <em>Criado por - Itiel Cardoso Dario</em>
+    </footer>
+
+    <script>
+        function mudar(){
+            var bg = window.document.body
+            var box = window.document.getElementById('img')
+            var txt_res = window.document.getElementById('txt_hora')
+            var res = Number(txt_res.value)
+
+            if(res < 12){
+                bg.style.background = 'rgb(226, 226, 131)'
+                box.style.background = 'rgb(226, 226, 131)'
+
+            }
+            else if(res <= 16){
+                bg.style.background = 'rgb(211, 134, 35)'
+                box.style.background = 'rgb(211, 134, 35)'
+            }
+            else{
+                bg.style.background = 'gray'
+                box.style.background = 'gray'
+            }
+        }
+    </script>
+</body>
+</html>
