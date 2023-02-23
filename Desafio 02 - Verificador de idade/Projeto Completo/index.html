@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <section class="principal">
+        <form>
+            <p class="box_form">Ano de nascimento:
+                <input type="number" name="txt_data" id="txt_data">
+            </p>
+            <p class="box_form">Sexo:
+                <input type="radio" name="sexo" id="sexo_mas" checked>
+                <label for="sexo_mas">Masculino</label>
+                <input type="radio" name="sexo" id="sexo_fem">
+                <label for="sexo_fem">Feminino</label>
+            </p>
+            <p>
+                <input id="button" type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </form>
+
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
+            
+        </div>
+    </section>
+
+    <footer>
+        <em>Criado por - Itiel Cardoso Dario</em>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
