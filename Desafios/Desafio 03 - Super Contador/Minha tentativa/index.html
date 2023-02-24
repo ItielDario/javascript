@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super contador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+
+    <section class="principal">
+        <form>
+            <div class="box_form">
+                <label for="num_start">Início:</label>
+                <input type="number" name="num_start" id="num_start">
+            </div>
+            <div class="box_form">
+                <label for="num_end">Fim:</label>
+                <input type="number" name="num_end" id="num_end">
+            </div>
+            <div class="box_form">
+                <label for="cont">Passo:</label>
+                <input type="number" name="cont" id="cont">
+            </div>
+            
+            <input id="button" type="button" value="Contar" onclick="contar()">
+        </form>
+
+        <div id="contagem">
+            <p>Preparando para a contagem... </p>
+        </div>
+    </section>
+
+    <footer>
+        <em>Criado por - Itiel Cardoso Dario</em>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
