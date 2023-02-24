@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+
+    <section class="principal">
+        <div class="box_form">
+            <p>Numero: <input type="number" name="txt_n" id="txt_n">
+            <input id="button" type="button" value="Gerar Tabuada" onclick="tabuada()"></p>
+        </div>
+
+        <div id="res">
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite um numero acima</option>
+                <!-- OS <option> DA TABUADA FORAM CRIADOS DE FORMA DINÂMICA -->
+            </select>
+        </div>
+    </section>
+
+    <footer>
+        <em>Criado por - Itiel Cardoso Dario</em>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
