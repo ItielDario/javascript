@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create / Remove Elements</title>
+
+    <style>
+        *{
+        padding: 0px;
+        margin: 0px;
+        border: none;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    button{
+        width: 150px;
+        height: 40px;
+        background-color: #025;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .curso{
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        align-items: center;
+        border: 4px solid #888;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px 0px;
+    }
+
+    .destaque{
+        background-color: #800 !important;  
+        color: #FCC !important;
+        border-color: #F00 !important;
+    }
+
+    .c1{
+        background-color: #CCC;
+        color: #444;
+    }
+
+    .c2{
+        background-color: #444;
+        color: #CCC;
+    }
+
+    .caixa{
+        border: 4px solid black;
+        background-color: #EEE;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        height: 500px;
+        width: 300px;
+    }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <div id="caixa1" class="caixa">
+            <!-- OS CURSOS FORAM ADICIONADOS NO JS -->
+        </div>
+    </main>
+
+    <script src="elements.js"></script>
+</body>
+</html>
