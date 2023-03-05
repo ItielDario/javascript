@@ -26,3 +26,33 @@ if(pos == -1){
 else{
     console.log(`Indice onde está o valor 12: [${valores.indexOf(12)}]`)  // NESTE CASO RETORNARA O INDICE 3
 }
+console.log(``)
+
+
+// FUNÇÕES DENTRO DE VETORES ---------------------------------------------------------------------------------------------
+let valor = [1, 2, 3, 4, 5]
+const op = [
+    (val) => {   // SOMA OS VALORES DE UM VETOR
+        let res = 0
+        for(v of val){
+            res += v
+        }
+        return res
+    },
+
+    (val) => {   // MULTIPLICA OS VALORES DE UM VETOR
+        let res = 1
+        for(v of val){
+            res *= v
+        }
+        return res
+    },
+
+    (val) => {  // EXIBE TODOS OS VALORES DO VETOR
+        for(v of val){
+            console.log(v)
+        }
+    }
+]
+
+console.log(op[0](valor))
