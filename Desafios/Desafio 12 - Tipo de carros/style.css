@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+body{
+    padding: 15px;
+}
+
+.carros{
+    display: flex;
+    width: 100%;
+    border: 3px solid black;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.carro{
+    border: 3px #008 solid;
+    background-color: #8CF;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    width: 200px;
+    margin: 0 5px;
+    flex-direction: column;
+}
+
+.campoForm{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.campoForm input{
+    background-color: #EEE;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.campoForm button{
+    background-color: #888;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
