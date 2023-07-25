@@ -1,0 +1,44 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    background-color: #F1CBD8;
+}
+
+
+
+.foto-container{
+    width: 100%;
+    text-align: center;
+}
+
+.foto-container img{
+    height: 20vw;
+}
+
+.botao{
+    width: 60px;
+    height: 55px;
+}
+
+.container{
+    display: grid;  /* DIVIDE O CONTEUDO EM LINHAS E COLUNAS */
+    grid-template-columns: 1fr 1fr 1fr;  /* DIVIDE O CONTEUDO EM 3 COLUNAS */
+    margin-top: 30px;
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+p{
+    margin-top: 0;
+}
+
+.container > div{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1000px){
+    .foto-container img{
+        height: 50vw;
+    }
+}
