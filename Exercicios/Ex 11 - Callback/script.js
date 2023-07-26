@@ -35,7 +35,7 @@ createButton('Cadastrar', (button1) => { // PASSA UM NOME E UMA FUNÇÃO (CALLBA
     `;
 
     button1.addEventListener('click', () => {
-        console.log("aaaaaaaaaa")
+        console.log("Teste 01")
     });
 });
 
@@ -46,6 +46,6 @@ createButton('Sair', (button1) => {
     `;
 
     button1.addEventListener('click', () => {
-        console.log("bbbbbbbbbbbbbbb");
+        console.log("Teste 02");
     })
 });
