@@ -1,7 +1,7 @@
 // EXEMPLO PRÁTICO (CALCULAR O IMC):
 
 // PARA IMPORTAR O AQUIVO 'MAIN.JS' DEVE CRIAR UM PACKGE.JSON (npm init), DEFINIR O ARQUIVO PRINCIPAL O 'main.js', DEFINIR O TYPO DO ARQUIVO COMO MÓDULO (type = "module") E DEFINIR NO HTML 'type = "module"'
-import { Pessoa } from './Pessoa.js';
+import { Pessoa } from './api/models/Pessoa.js';
 
 // CRIANDO UM OBJETO INDEFINIDO / CRIANDO UMA NOVA INSTANCIA
 let pessoa1 = new Pessoa(); 

@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Orientado a Objetos</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main class="tela-principal">
-        <section id="conteudos">
-            <h1>Javascript Orientado a Objetos</h1>
-            <p id="dados"></p>
+    <main class="container-calculadora">
+        <section class="titulo-calculadora">
+            <h1>Calculadora de IMC</h1>
         </section>
-    </main>
+        
+        <form action="">
+            <article class="campos">
+                <label for="nome">Nome <strong style="color: red;">*</strong></label>
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+            </article>
 
+            <article class="campos">
+                <label for="idade">Idade <strong style="color: red;">*</strong></label>
+                <input type="text" name="idade" id="idade" placeholder="Idade">
+            </article>
+
+            <article class="campos">
+                <label for="peso">Peso <strong style="color: red;">*</strong></label>
+                <input type="text" name="peso" id="peso" placeholder="Peso">
+            </article>
+
+            <article class="campos">
+                <label for="altura">Altura <strong style="color: red;">*</strong></label>
+                <input type="text" name="altura" id="altura" placeholder="Altura">
+            </article>
+            
+            <input type="submit" value="Calcular" class="btn-calcular">
+        </form>
+    </main>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

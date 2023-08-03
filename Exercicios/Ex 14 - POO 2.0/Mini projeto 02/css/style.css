@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(37, 10, 127);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-calculadora{
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    width: 800px;
+}
+
+.titulo-calculadora > h1{
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+}
+
+.campos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campos > label{
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.campos > input{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.128);
+    padding: 10px 0 10px 10px;
+    outline: none;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.726);
+}
+
+.campos > input::placeholder{
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.305);
+}
+
+.campos > input:focus{
+    border-bottom: 3px solid rgb(37, 10, 127);
+    padding: 12px 10px;
+}
+
+.btn-calcular{
+    width: 100%;
+    border: none;
+    background-color: rgb(95, 62, 202);
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-calcular:hover{
+    background-color: rgb(87, 57, 184);
+}

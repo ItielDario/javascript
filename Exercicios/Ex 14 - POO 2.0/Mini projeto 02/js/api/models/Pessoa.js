@@ -14,6 +14,7 @@ export class Pessoa{ // CRIA UMA CLASSE (A PARTIR DESTE MOLDE SERÃO CRIADOS OS 
     _peso   
     _altura
     _imc
+    _classificacao
 
     // STATIC -> É UM ATRIBUTO QUE PERTENCE A CLASSE E NÃO É PASSADO PARA OS OBJETOS
     static totalPessoas = 0; 
@@ -25,17 +26,18 @@ export class Pessoa{ // CRIA UMA CLASSE (A PARTIR DESTE MOLDE SERÃO CRIADOS OS 
         this._peso = peso;
         this._altura = altura;
 
-        this._imc = this._peso / (this._altura * this._altura);
+        this._imc = (this._peso / (this._altura * this._altura)).toFixed(2); // SET IMC
+        this._classificacao = this.classificaImc();  // ATRIBUI UMA CLASSIFICAÇÃO CONFORME O PESO
 
         Pessoa.totalPessoas += 1; // CONTA O TOTAL DE OBEJTOS 'PESSOAS' QUE FORAM INSTANCIADOS
     }
 
-    calcularImc() {  // MÉTODO COM RETORNO -> SET IMC
-        return (this._peso / (this._altura * this._altura)).toFixed(2);
+    calcularImc() {  // MÉTODO COM RETORNO -> GET IMC
+        return this._imc;
     }
 
     classificaImc() {
-        let valorImc = (this._imc).toFixed(2);
+        let valorImc = this._imc
         let classificacao = '';
 
         if(valorImc < 18.5){
