@@ -1,8 +1,29 @@
 // EXEMPLO PRÁTICO (CALCULAR O IMC):
 
 // PARA IMPORTAR O AQUIVO 'MAIN.JS' DEVE CRIAR UM PACKGE.JSON (npm init), DEFINIR O ARQUIVO PRINCIPAL O 'main.js', DEFINIR O TYPO DO ARQUIVO COMO MÓDULO (type = "module") E DEFINIR NO HTML 'type = "module"'
-import { Pessoa } from './api/models/Pessoa.js';
+// import { Pessoa } from './api/models/Pessoa.js';
 
+import { PessoaController } from './api/controllers/PessoaController.js';
+
+let pessoaController = new PessoaController();  // INSTANCIANDO UM OBJETO DA CLASSE PESSOACONTROLLER
+
+let formulario = document.querySelector('form');
+
+// QUANDO O USUÁRIO CLICAR EM SUBMIT PEGA O VALOR DOS FURMULÁRIOS
+formulario.addEventListener('submit', (event) => {
+    
+    // ADICIONAR PESSOA
+    pessoaController.adicionar(event);
+
+    // LIMPAR O FORMULÁRIO
+    pessoaController._limparFormulario()
+})
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------
 // CRIANDO UM OBJETO INDEFINIDO / CRIANDO UMA NOVA INSTANCIA
 let pessoa1 = new Pessoa(); 
 
@@ -56,3 +77,4 @@ console.log(pessoa1.classificaImc());
 console.log(pessoa2.classificaImc());
 console.log(pessoa3.classificaImc());
 console.log(pessoa4.classificaImc());
+*/
