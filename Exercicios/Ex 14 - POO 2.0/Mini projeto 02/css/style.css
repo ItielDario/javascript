@@ -8,11 +8,12 @@ body{
 }
 
 body{
-    height: 100vh;
+
     background-color: rgb(37, 10, 127);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 40px 0;
 }
 
 .container-calculadora{
@@ -75,4 +76,30 @@ body{
 
 .btn-calcular:hover{
     background-color: rgb(87, 57, 184);
+}
+
+#dados{
+    margin-top: 100px;
+    width: 100%;
+}
+
+#dados > table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dados > table > tbody > tr:nth-child(even){
+    background-color: rgb(236, 236, 236);
+}
+
+#dados > table > thead{
+    background-color: rgb(139, 112, 255);
+    color: white;
+}
+
+th,
+td{
+    padding: 7px 20px;
+    text-align: center;
+    border: 2px solid rgb(211, 211, 211);
 }

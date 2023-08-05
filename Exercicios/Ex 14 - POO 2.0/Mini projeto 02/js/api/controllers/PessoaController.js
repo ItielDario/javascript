@@ -3,7 +3,9 @@
 // A CLASSE PESSOA NOS DÁ O MODELO PARA CRIARMOS OBJETOS
 // O CONTROLLER É UMA CLASSE DE AÇÕES (ADICIONAR, EDITAR, APAGAR, LISTAR, VISUALIZAR, ENTRE OUTROS) AS INFORMÇÕES VINDA DOS FOMULÁRIOS
  
-import { Pessoa } from '../models/Pessoa.js'  // O CONTROLLERPESSOA PRECISA DE 'PESSOA' PARA FUNCIONAR
+import { Pessoa } from '../models/Pessoa.js'  // O CONTROLLERPESSOA PRECISA DESTAS IMPORTAÇÕES PARA FUNCIONAR
+import { ListaPessoas } from '../models/ListaPessoas.js'
+import { PessoaView } from '../views/PessoasWiew.js'
 
 export class PessoaController{
     
@@ -21,6 +23,12 @@ export class PessoaController{
         this._inputIdade = document.querySelector('#idade');
         this._inputPeso = document.querySelector('#peso');
         this._inputAltura = document.querySelector('#altura');
+ 
+        // QUANDO INSTANCIAR O OBJETO 'PESSOACONTROLLER' TAMBEM INSTANCIA O 'LISTAPESSOAS' E O 'PESSOASVIEW' 
+        this._listaPessoas = new ListaPessoas();
+
+        this._pessoasView = new PessoaView(document.querySelector("#dados")); // PASSA COMO PARÂMETRO A SECTION DO HTML
+        this._pessoasView.updade(this._listaPessoas); // COMO NÃO TEM DADOS EXIBE APENSA OS TITULOS DA TABELA
     }
 
     // ADICIONA PESSOAS
@@ -29,8 +37,10 @@ export class PessoaController{
         event.preventDefault();  // EVITA IR PARA OUTRA PÁGINA (CONTINUA NA MESMA PÁGINA)
 
         // CRIAR UMA PESSOA
-        this._criarPessoa();
-        console.log(this._criarPessoa());
+        this._listaPessoas.adcionaNaLista(this._criarPessoa());  // O OBJETO INSTANCIADO CHAMA A FUNÇÃO 'ADICIONANALISTA' E PASSA COMO PARAMETRO O RETORNO DE 'CRIARPESSOA'
+
+        // ATUALIZAÇÃO DA TELA
+        this._pessoasView.updade(this._listaPessoas);
     }
 
     // CRIA PESSOAS
@@ -40,7 +50,7 @@ export class PessoaController{
             this._inputIdade.value,
             this._inputPeso.value,
             this._inputAltura.value,
-        )
+        );
     }
 
     // LIMPA O FOMULÁRIO

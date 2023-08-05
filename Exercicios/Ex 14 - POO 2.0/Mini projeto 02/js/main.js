@@ -16,11 +16,8 @@ formulario.addEventListener('submit', (event) => {
     pessoaController.adicionar(event);
 
     // LIMPAR O FORMULÁRIO
-    pessoaController._limparFormulario()
-})
-
-
-
+    pessoaController._limparFormulario();
+});
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------
