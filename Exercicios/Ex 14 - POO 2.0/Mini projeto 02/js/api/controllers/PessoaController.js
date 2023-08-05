@@ -3,9 +3,11 @@
 // A CLASSE PESSOA NOS DÁ O MODELO PARA CRIARMOS OBJETOS
 // O CONTROLLER É UMA CLASSE DE AÇÕES (ADICIONAR, EDITAR, APAGAR, LISTAR, VISUALIZAR, ENTRE OUTROS) AS INFORMÇÕES VINDA DOS FOMULÁRIOS
  
-import { Pessoa } from '../models/Pessoa.js'  // O CONTROLLERPESSOA PRECISA DESTAS IMPORTAÇÕES PARA FUNCIONAR
-import { ListaPessoas } from '../models/ListaPessoas.js'
-import { PessoaView } from '../views/PessoasWiew.js'
+import { Pessoa } from '../models/Pessoa.js';  // O CONTROLLERPESSOA PRECISA DESTAS IMPORTAÇÕES PARA FUNCIONAR
+import { ListaPessoas } from '../models/ListaPessoas.js';
+import { PessoaView } from '../views/PessoasWiew.js';
+import { Mensagem } from '../models/Mensagem.js';
+import { MensagemView } from '../views/MensagemView.js';
 
 export class PessoaController{
     
@@ -27,8 +29,14 @@ export class PessoaController{
         // QUANDO INSTANCIAR O OBJETO 'PESSOACONTROLLER' TAMBEM INSTANCIA O 'LISTAPESSOAS' E O 'PESSOASVIEW' 
         this._listaPessoas = new ListaPessoas();
 
+        // VIEW PESSOAS
         this._pessoasView = new PessoaView(document.querySelector("#dados")); // PASSA COMO PARÂMETRO A SECTION DO HTML
         this._pessoasView.updade(this._listaPessoas); // COMO NÃO TEM DADOS EXIBE APENSA OS TITULOS DA TABELA
+
+        // VIEW MENSAGEM
+        this._mensagem = new Mensagem();
+        this._mensagemView = new MensagemView(document.querySelector("#mensagem"));
+        this._mensagemView.update(this._mensagem);
     }
 
     // ADICIONA PESSOAS
@@ -38,6 +46,10 @@ export class PessoaController{
 
         // CRIAR UMA PESSOA
         this._listaPessoas.adcionaNaLista(this._criarPessoa());  // O OBJETO INSTANCIADO CHAMA A FUNÇÃO 'ADICIONANALISTA' E PASSA COMO PARAMETRO O RETORNO DE 'CRIARPESSOA'
+
+        // DEFINIR E ATUALIZAR MENSAGEM
+        this._mensagem.texto = 'Pessoa cadastrada com sucesso!';
+        this._mensagemView.update(this._mensagem);
 
         // ATUALIZAÇÃO DA TELA
         this._pessoasView.updade(this._listaPessoas);

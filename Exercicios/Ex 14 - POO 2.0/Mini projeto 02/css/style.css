@@ -103,3 +103,17 @@ td{
     text-align: center;
     border: 2px solid rgb(211, 211, 211);
 }
+
+#mensagem{
+    background-color: rgb(30, 173, 85);
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#mensagem > p{
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+}
