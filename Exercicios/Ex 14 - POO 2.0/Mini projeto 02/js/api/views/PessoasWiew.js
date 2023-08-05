@@ -1,11 +1,13 @@
-// EXIBE TODAS AS PESSOAS CADASTRADAS EM UMA TABELA
+// IMPORTANDO A CLASSE MÃE 
+import { View } from "../views/View.js"; 
 
-export class PessoaView{
+// EXIBE TODAS AS PESSOAS CADASTRADAS EM UMA TABELA
+export class PessoaView extends View{  // INDICA QUE A CLASSE 'PESSOAVIEW' É FILHA DE 'VIEW'
     constructor(elemento){
-        this._elemento = elemento;
+        super(elemento) // INDICA QUE IRÁ UTILIZAR O MÉTODO CONSTRUTOR DA CLASSE MÃE / SUPERCLASSE  
     }
 
-    _tamplete(model){
+    tamplete(model){ // SOBRESCREEVENDO O MÉTODO DA CLASSE MÃE
         return `
             <table>
                 <thead>
@@ -36,7 +38,5 @@ export class PessoaView{
         `
     }
 
-    updade(model){ // EXIBE AS INFORMAÇÕES NA PÁGINA
-        this._elemento.innerHTML = this._tamplete(model);  
-    }
+    // O UPDADE É O MESMO DA CLASSE MÃE E POR TANTO NÃO PRECISA SER INSERIDO
 }

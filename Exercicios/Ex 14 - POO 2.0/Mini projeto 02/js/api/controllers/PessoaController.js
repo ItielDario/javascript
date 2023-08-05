@@ -31,7 +31,7 @@ export class PessoaController{
 
         // VIEW PESSOAS
         this._pessoasView = new PessoaView(document.querySelector("#dados")); // PASSA COMO PARÂMETRO A SECTION DO HTML
-        this._pessoasView.updade(this._listaPessoas); // COMO NÃO TEM DADOS EXIBE APENSA OS TITULOS DA TABELA
+        this._pessoasView.update(this._listaPessoas); // COMO NÃO TEM DADOS EXIBE APENSA OS TITULOS DA TABELA
 
         // VIEW MENSAGEM
         this._mensagem = new Mensagem();
@@ -52,7 +52,7 @@ export class PessoaController{
         this._mensagemView.update(this._mensagem);
 
         // ATUALIZAÇÃO DA TELA
-        this._pessoasView.updade(this._listaPessoas);
+        this._pessoasView.update(this._listaPessoas);
     }
 
     // CRIA PESSOAS
