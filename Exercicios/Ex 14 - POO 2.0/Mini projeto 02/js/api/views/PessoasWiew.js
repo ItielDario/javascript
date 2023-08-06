@@ -29,7 +29,7 @@ export class PessoaView extends View{  // INDICA QUE A CLASSE 'PESSOAVIEW' É FI
                             <td>${pes._peso}</td>
                             <td>${pes._altura}</td>
                             <td>${pes._imc}</td>
-                            <td>${pes.classificaImc()}</td>
+                            <td>${pes._classificacao}</td>
                         </tr>
                         `
                     }).join('') /* JOIN -> JUNTA TODOS OS DADOS GERADOS PELO MAP EM UMA ÚNICA STRING */}

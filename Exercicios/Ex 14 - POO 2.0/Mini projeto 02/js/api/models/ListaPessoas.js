@@ -1,8 +1,8 @@
 // CRIA UM ARRAY PARA ARMAZENAR OS OBEJETOS CRIADOS
 
 export class ListaPessoas{
-    constructor(){
-        this._pessoas = [];  // CRIA UM ARRAY VAZIO
+    constructor(lista = []){
+        this._pessoas = lista;  // MOSTRA OS DADOS DO LOCALSTORAGE OU CRIA UM ARRAY VAZIO 
     }
 
     adcionaNaLista(objPessoa){

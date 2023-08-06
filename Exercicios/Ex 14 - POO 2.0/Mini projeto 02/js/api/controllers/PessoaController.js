@@ -8,6 +8,7 @@ import { ListaPessoas } from '../models/ListaPessoas.js';
 import { PessoaView } from '../views/PessoasWiew.js';
 import { Mensagem } from '../models/Mensagem.js';
 import { MensagemView } from '../views/MensagemView.js';
+import { PessoasRepository } from '../repositories/PessoasRepository.js';
 
 export class PessoaController{
     
@@ -25,13 +26,18 @@ export class PessoaController{
         this._inputIdade = document.querySelector('#idade');
         this._inputPeso = document.querySelector('#peso');
         this._inputAltura = document.querySelector('#altura');
+
+        // REPOSITÓRIO
+        this._pessoaRepository = new PessoasRepository()
+        let lista = this._pessoaRepository.ler();
+        console.log(lista);
  
         // QUANDO INSTANCIAR O OBJETO 'PESSOACONTROLLER' TAMBEM INSTANCIA O 'LISTAPESSOAS' E O 'PESSOASVIEW' 
-        this._listaPessoas = new ListaPessoas();
+        this._listaPessoas = new ListaPessoas(lista); // PASSA COMO PARÂMETRO O LOCALSTORAGE
 
         // VIEW PESSOAS
         this._pessoasView = new PessoaView(document.querySelector("#dados")); // PASSA COMO PARÂMETRO A SECTION DO HTML
-        this._pessoasView.update(this._listaPessoas); // COMO NÃO TEM DADOS EXIBE APENSA OS TITULOS DA TABELA
+        this._pessoasView.update(this._listaPessoas); // EXIBE A TABELA COM OS DADOS DO LOCALSTORAGE
 
         // VIEW MENSAGEM
         this._mensagem = new Mensagem();
@@ -44,15 +50,19 @@ export class PessoaController{
 
         event.preventDefault();  // EVITA IR PARA OUTRA PÁGINA (CONTINUA NA MESMA PÁGINA)
 
-        // CRIAR UMA PESSOA
-        this._listaPessoas.adcionaNaLista(this._criarPessoa());  // O OBJETO INSTANCIADO CHAMA A FUNÇÃO 'ADICIONANALISTA' E PASSA COMO PARAMETRO O RETORNO DE 'CRIARPESSOA'
+        // CRIAR UMA PESSOA,
+        const pessoaAdd = this._criarPessoa();
+        this._listaPessoas.adcionaNaLista(pessoaAdd);  // O OBJETO INSTANCIADO CHAMA A FUNÇÃO 'ADICIONANALISTA' E PASSA COMO PARAMETRO O RETORNO DE 'CRIARPESSOA'
+
+        // ADICIONAR NO REPOSITORIO
+        this._pessoaRepository.criar(pessoaAdd);
+
+        // ATUALIZAÇÃO DA TELA
+        this._pessoasView.update(this._listaPessoas);
 
         // DEFINIR E ATUALIZAR MENSAGEM
         this._mensagem.texto = 'Pessoa cadastrada com sucesso!';
         this._mensagemView.update(this._mensagem);
-
-        // ATUALIZAÇÃO DA TELA
-        this._pessoasView.update(this._listaPessoas);
     }
 
     // CRIA PESSOAS
