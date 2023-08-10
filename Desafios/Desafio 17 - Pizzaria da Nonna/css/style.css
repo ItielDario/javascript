@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Hepta Slab', 'sans-serif';
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+#group-pizzas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-title{
+    margin: 30px 0;
+    font-size: 30px;
+}
+
+.box-pizza{
+    width: 32%;
+    height: 36vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 5vw;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.img-pizza{
+    cursor: pointer;
+    width: 20vw;
+}
+
+.btn-adicionar{
+    margin-top: -40px;
+    padding: 0px 20px;
+    background-color: rgb(214, 19, 19);
+    border-radius: 50%;
+    color: white;
+    font-weight: 400;
+    font-size: 50px;
+    cursor: pointer;
+    
+}
+
+.img-pizza:hover + .btn-adicionar,
+.btn-adicionar:hover{
+    background-color: rgb(168, 26, 26);
+}
+
+.aux-nav{
+    width: 35%;
+    display: none;
+}
+
+nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(255, 174, 174);
+    padding: 50px 20px;
+    flex-direction: column;
+}
+
+.list-pizzas{
+    border-bottom: 3px solid rgba(152, 61, 61, 0.58);
+    padding: 20px 0;
+    
+}
+
+.subtotal,
+.desconto,
+.total{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal,
+.desconto{
+    color: rgb(75, 75, 75);
+    border-bottom: 3px solid rgba(152, 61, 61, 0.58);
+}
+
+.total{
+    font-size: 20px;
+}
+
+.btn-submit{
+    margin-top: 20px;
+    padding: 20px 20px;
+    background-color: rgb(0, 179, 0);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Hepta Slab', 'sans-serif';
+}
+
+.btn-submit:hover{
+    background-color: rgb(0, 206, 0);
+}
+
+.popUp{
+    position: fixed;
+    top: 15%;
+    left: 15%;
+    padding: 40px;
+    width: 70vw;
+    height: 35vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.267);
+    border-radius: 20px;
+    animation: surgir 0.4s ease-in-out forwards;
+}
+
+@keyframes surgir {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.content-pop{
+    display: flex;
+}
+
+.img-pop{
+    width: 50%;
+    
+} 
+
+.img-pop > img{
+    width: 90%;
+} 
+
+.info-pop{
+    width: 50%;
+    background-color: blue;
+}
