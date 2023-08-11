@@ -1,4 +1,4 @@
-import pizzaJson from './pizzas.js';
+import pizzaJson from './pizzas.js'; 
 
 const containerPizza = document.querySelector('#group-pizzas');
 
@@ -27,6 +27,22 @@ for(let i = 0; i < pizzaImg.length; i++){
     elBtn.addEventListener('click', exibirModal);
 }
 
+function fechaPopUp(){
+    const contentPop = document.querySelector('.content-pop');
+    const main = document.querySelector('main');
+
+    main.addEventListener('click', (evt) => {  // QUANDO O USUÁRIO CLICAR FORA DO POP-UP
+        const selecionandoPopUp = contentPop.parentNode;
+        selecionandoPopUp.remove();
+
+        console.log('aaaaaaaaaaaaa');
+        
+        document.querySelector('main').style.opacity = 1;
+    });
+
+    main.removeEventListener('clcik', main);
+};
+
 function exibirModal(event){
     let elementId = event.target.id;
     let ObjElement = pizzaJson[elementId - 1]
@@ -41,10 +57,12 @@ function exibirModal(event){
             </div>
 
             <div class="info-pop">
-                <h3>aaaaaaaaaaaa<h3>
+                <h3><h3>
             </div>
         </div>
     `;
     document.body.appendChild(popUp);   
 
+    const
+        fechaPopUp();
 }
